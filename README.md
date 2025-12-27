@@ -1,36 +1,47 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Next.js 14 website for ID Filters, generated from the locally scraped `idfilters.rs` content (see `../mirror/` and `../metadata/`).
 
 ## Getting Started
 
-First, run the development server:
+Install deps (already installed in this workspace) and run the dev server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Content source (scrape → website)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Scraped HTML lives in `../mirror/www.idfilters.rs/`
+- Seed URLs are in `../metadata/urls.txt`
+- Extracted site content (generated) is `src/content/pages.json`
+- Images are copied to `public/wp-content/uploads/` so existing asset paths like `/wp-content/uploads/...` keep working
 
-## Learn More
+Regenerate extracted content (after re-scraping or edits):
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run extract:content
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Sync images from the mirror into `public/`:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+mkdir -p public/wp-content
+rsync -a --delete ../mirror/www.idfilters.rs/wp-content/uploads/ public/wp-content/uploads/
+```
 
-## Deploy on Vercel
+## Structure
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- `src/app/page.tsx` – redesigned homepage (featured products + applications)
+- `src/app/proizvodi/page.tsx` – products index (with search query param)
+- `src/app/aplikacija/page.tsx` – applications index
+- `src/app/kontakt/page.tsx` – contact page (mailto-based form)
+- `src/app/[...slug]/page.tsx` – renders all other scraped pages from `src/content/pages.json`
+- `src/app/sitemap.ts` + `src/app/robots.ts` – SEO endpoints
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Build
+
+```bash
+npm run build
+npm run start
+```

@@ -2,7 +2,7 @@ export function AirflowBackground() {
   return (
     <svg
       aria-hidden="true"
-      className="airflow-mask pointer-events-none absolute inset-0 h-full w-full opacity-50 sm:opacity-70 dark:opacity-35 dark:sm:opacity-45"
+      className="airflow-mask pointer-events-none absolute inset-0 h-full w-full opacity-35 sm:opacity-45"
       viewBox="0 0 1200 600"
       preserveAspectRatio="none"
     >

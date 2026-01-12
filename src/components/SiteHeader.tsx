@@ -14,7 +14,7 @@ const nav = [
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-50 border-b bg-white/80 backdrop-blur dark:bg-black/20">
+    <header className="sticky top-0 z-50 border-b bg-black/20 backdrop-blur">
       <Container className="flex items-center justify-between py-3">
         <Link href="/" className="flex items-center gap-3">
           <Image
@@ -32,7 +32,7 @@ export function SiteHeader() {
             <Link
               key={item.href}
               href={item.href}
-              className="text-slate-700 hover:text-slate-900 dark:text-slate-200 dark:hover:text-white"
+              className="text-slate-200 hover:text-white"
             >
               {item.label}
             </Link>

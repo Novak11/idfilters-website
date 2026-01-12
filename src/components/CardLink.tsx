@@ -17,9 +17,9 @@ export function CardLink({
   return (
     <Link
       href={href}
-      className="group block overflow-hidden rounded-2xl border bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-md dark:bg-white/[0.03]"
+      className="group block overflow-hidden rounded-2xl border bg-white/[0.03] shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
     >
-      <div className="relative aspect-[4/3] w-full bg-slate-50 dark:bg-white/[0.02]">
+      <div className="relative aspect-[4/3] w-full bg-white/[0.02]">
         {image ? (
           <Image
             src={image}
@@ -42,11 +42,11 @@ export function CardLink({
       <div className="p-5">
         <div className="text-base font-semibold tracking-tight">{title}</div>
         {description ? (
-          <div className="mt-2 line-clamp-3 text-sm text-slate-600 dark:text-slate-300">
+          <div className="mt-2 line-clamp-3 text-sm text-slate-300">
             {description}
           </div>
         ) : null}
-        <div className="mt-4 text-sm font-medium text-sky-700 dark:text-sky-300">
+        <div className="mt-4 text-sm font-medium text-sky-300">
           Pogledaj →
         </div>
       </div>

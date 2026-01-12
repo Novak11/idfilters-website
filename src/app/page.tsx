@@ -32,18 +32,18 @@ export default function HomePage() {
   return (
     <>
       <section className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-sky-50 to-white dark:from-slate-950 dark:to-slate-950" />
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-950 to-slate-950" />
         <AirflowBackground />
         <Container className="relative py-14 sm:py-20">
           <div className="grid items-center gap-10 lg:grid-cols-[1.2fr_0.8fr]">
             <div>
-              <div className="inline-flex items-center rounded-full border bg-white px-3 py-1 text-xs font-medium text-slate-700 shadow-sm dark:bg-white/[0.03] dark:text-slate-200">
+              <div className="inline-flex items-center rounded-full border bg-white/[0.03] px-3 py-1 text-xs font-medium text-slate-200 shadow-sm">
                 Proizvodnja · Tehnička podrška · Brza isporuka
               </div>
               <h1 className="mt-5 text-balance text-3xl font-semibold tracking-tight sm:text-5xl">
                 {home.title}
               </h1>
-              <p className="mt-5 max-w-2xl text-pretty text-base text-slate-600 dark:text-slate-300 sm:text-lg">
+              <p className="mt-5 max-w-2xl text-pretty text-base text-slate-300 sm:text-lg">
                 {about?.excerpt ||
                   "Specijalizovani smo za filtere za vazduh za civilnu i industrijsku klimatizaciju i ventilaciju, uz potpunu tehničku podršku."}
               </p>
@@ -56,11 +56,11 @@ export default function HomePage() {
                 </Link>
                 <Link
                   href="/kontakt"
-                  className="inline-flex items-center justify-center rounded-xl border bg-white px-5 py-3 text-sm font-semibold text-slate-900 shadow-sm hover:bg-slate-50 focus:outline-none focus-visible:ring-4 focus-visible:ring-sky-500/30 dark:bg-white/[0.03] dark:text-white dark:hover:bg-white/[0.06]"
+                  className="inline-flex items-center justify-center rounded-xl border bg-white/[0.03] px-5 py-3 text-sm font-semibold text-white shadow-sm hover:bg-white/[0.06] focus:outline-none focus-visible:ring-4 focus-visible:ring-sky-500/30"
                 >
                   Kontakt i ponuda
                 </Link>
-                <div className="text-sm text-slate-600 dark:text-slate-300">
+                <div className="text-sm text-slate-300">
                   <a className="font-medium hover:underline" href={`tel:${phone.replace(/\s+/g, "")}`}>
                     {phone}
                   </a>
@@ -72,11 +72,11 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div className="relative overflow-hidden rounded-3xl border bg-white shadow-sm dark:bg-white/[0.03]">
-              <div className="absolute inset-0 bg-gradient-to-br from-sky-200/50 via-transparent to-emerald-200/40 dark:from-sky-500/10 dark:to-emerald-500/10" />
+            <div className="relative overflow-hidden rounded-3xl border bg-white/[0.03] shadow-sm">
+              <div className="absolute inset-0 bg-gradient-to-br from-sky-500/10 via-transparent to-emerald-500/10" />
               <div className="relative p-6 sm:p-8">
                 <div className="text-sm font-semibold tracking-tight">Brzi pregled</div>
-                <ul className="mt-4 space-y-3 text-sm text-slate-700 dark:text-slate-200">
+                <ul className="mt-4 space-y-3 text-sm text-slate-200">
                   <li className="flex gap-3">
                     <span className="mt-1 h-2 w-2 rounded-full bg-sky-600" />
                     ISO 16890 (zamena za EN779) – klase G2 do F9
@@ -91,7 +91,7 @@ export default function HomePage() {
                   </li>
                 </ul>
                 {home.heroImage ? (
-                  <div className="relative mt-6 aspect-[16/10] overflow-hidden rounded-2xl border bg-slate-50 dark:bg-white/[0.02]">
+                  <div className="relative mt-6 aspect-[16/10] overflow-hidden rounded-2xl border bg-white/[0.02]">
                     <Image
                       src={home.heroImage}
                       alt=""
@@ -113,13 +113,13 @@ export default function HomePage() {
           <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
             <div>
               <h2 className="text-2xl font-semibold tracking-tight">Proizvodi</h2>
-              <p className="mt-1 text-sm text-slate-600 dark:text-slate-300">
+              <p className="mt-1 text-sm text-slate-300">
                 Najtraženije kategorije iz ponude.
               </p>
             </div>
             <Link
               href="/proizvodi"
-              className="text-sm font-semibold text-sky-700 hover:underline dark:text-sky-300"
+              className="text-sm font-semibold text-sky-300 hover:underline"
             >
               Sve kategorije →
             </Link>
@@ -139,18 +139,18 @@ export default function HomePage() {
         </Container>
       </section>
 
-      <section className="border-y bg-white/40 py-14 dark:bg-white/[0.02]">
+      <section className="border-y bg-white/[0.02] py-14">
         <Container>
           <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
             <div>
               <h2 className="text-2xl font-semibold tracking-tight">Aplikacije</h2>
-              <p className="mt-1 text-sm text-slate-600 dark:text-slate-300">
+              <p className="mt-1 text-sm text-slate-300">
                 Gde se naši filteri najčešće koriste.
               </p>
             </div>
             <Link
               href="/aplikacija"
-              className="text-sm font-semibold text-sky-700 hover:underline dark:text-sky-300"
+              className="text-sm font-semibold text-sky-300 hover:underline"
             >
               Sve aplikacije →
             </Link>
@@ -174,22 +174,22 @@ export default function HomePage() {
       {iso ? (
         <section className="py-14">
           <Container>
-            <div className="grid gap-6 rounded-3xl border bg-gradient-to-br from-sky-50 via-white to-emerald-50 p-8 shadow-sm dark:from-slate-950 dark:via-slate-950 dark:to-slate-950">
+            <div className="grid gap-6 rounded-3xl border bg-gradient-to-br from-slate-950 via-slate-950 to-slate-950 p-8 shadow-sm">
               <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
                 <div>
-                  <div className="text-sm font-semibold text-slate-700 dark:text-slate-200">
+                  <div className="text-sm font-semibold text-slate-200">
                     Standardi i edukacija
                   </div>
                   <h2 className="mt-2 text-2xl font-semibold tracking-tight">
                     {iso.title}
                   </h2>
-                  <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">
+                  <p className="mt-2 text-sm text-slate-300">
                     {iso.excerpt}
                   </p>
                 </div>
                 <Link
                   href={iso.path}
-                  className="inline-flex items-center justify-center rounded-xl bg-slate-900 px-5 py-3 text-sm font-semibold text-white shadow-sm hover:bg-slate-800 focus:outline-none focus-visible:ring-4 focus-visible:ring-sky-500/40 dark:bg-white dark:text-slate-950 dark:hover:bg-slate-200"
+                  className="inline-flex items-center justify-center rounded-xl bg-white px-5 py-3 text-sm font-semibold text-slate-950 shadow-sm hover:bg-slate-200 focus:outline-none focus-visible:ring-4 focus-visible:ring-sky-500/40"
                 >
                   Pročitaj više
                 </Link>

@@ -8,11 +8,11 @@ const email = "idfilters@gmail.com";
 
 export function SiteFooter() {
   return (
-    <footer className="border-t bg-white/60 py-10 dark:bg-white/[0.02]">
+    <footer className="border-t bg-white/[0.02] py-10">
       <Container className="grid gap-8 md:grid-cols-3">
         <div>
           <div className="text-sm font-semibold tracking-tight">ID Filters d.o.o.</div>
-          <p className="mt-3 text-sm text-slate-600 dark:text-slate-300">
+          <p className="mt-3 text-sm text-slate-300">
             Porodična firma za proizvodnju i prodaju filtera za vazduh za civilnu i
             industrijsku klimatizaciju i ventilaciju.
           </p>
@@ -22,17 +22,17 @@ export function SiteFooter() {
           <div className="text-sm font-semibold tracking-tight">Brzi linkovi</div>
           <ul className="mt-3 space-y-2 text-sm">
             <li>
-              <Link href="/proizvodi" className="text-slate-700 hover:underline dark:text-slate-200">
+              <Link href="/proizvodi" className="text-slate-200 hover:underline">
                 Proizvodi
               </Link>
             </li>
             <li>
-              <Link href="/aplikacija" className="text-slate-700 hover:underline dark:text-slate-200">
+              <Link href="/aplikacija" className="text-slate-200 hover:underline">
                 Aplikacije
               </Link>
             </li>
             <li>
-              <Link href="/iso-16890-zamena-za-en779" className="text-slate-700 hover:underline dark:text-slate-200">
+              <Link href="/iso-16890-zamena-za-en779" className="text-slate-200 hover:underline">
                 ISO 16890 (zamena za EN779)
               </Link>
             </li>
@@ -41,7 +41,7 @@ export function SiteFooter() {
 
         <div>
           <div className="text-sm font-semibold tracking-tight">Kontakt</div>
-          <div className="mt-3 space-y-2 text-sm text-slate-700 dark:text-slate-200">
+          <div className="mt-3 space-y-2 text-sm text-slate-200">
             <div>
               11271 Beograd, Surčin – Srbija <br />
               Labudova br. 7
@@ -64,7 +64,7 @@ export function SiteFooter() {
         </div>
 
         <div className="md:col-span-3">
-          <div className="text-xs text-slate-500 dark:text-slate-400">
+          <div className="text-xs text-slate-400">
             © {new Date().getFullYear()} ID Filters. Sva prava zadržana.
           </div>
         </div>
